@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClasificacionesController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::resource('categorias',CategoriaController::class);
+Route::resource('clasificacion',ClasificacionesController::class);
+Route::resource('productos',ProductoController::class);
+Route::resource('index',UsuarioController::class);
+
